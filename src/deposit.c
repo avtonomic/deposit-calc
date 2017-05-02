@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "func.h"
+#include "deposit.h"
 
 int F(int sum, int sr)
 {

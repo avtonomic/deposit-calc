@@ -1,41 +1,44 @@
 #include <stdio.h>
 #include "deposit.h"
 
-int F(int sum, int sr)
+int validation(int amount, int data)
 {
-    float rez, sumf = sum;
-    
-    if (sr > 365 || sum < 10) {
-        printf("Error");
+    if (data > 365 || data < 0 || amount < 10000) {
         return 0;
-    }
-    if (sum <= 100) {
-        if (sr <= 30) {
-            rez = sum - (sumf / 10);
+    } else return 1;
+}
+
+int income_calc(int amount, int data)
+{
+    int result;
+    
+    if (amount <= 100000) {
+        if (data <= 30) {
+            result = amount - (amount / 10);
         } else 
-        if (sr <= 120) {
-            rez = sum + (sumf / 50);
+        if (data <= 120) {
+            result = amount + (amount / 50);
         } else
-        if (sr <= 240) {
-            rez = sum + (3 * sumf / 50);
+        if (data <= 240) {
+            result = amount + (3 * amount / 50);
         } else
-        if (sr <= 365) {
-            rez = sum + (3 * sumf / 25);
+        if (data <= 365) {
+            result = amount + (3 * amount / 25);
         }
     } else {
-        if (sr <= 30) {
-            rez = sum - (sumf / 10);
+        if (data <= 30) {
+            result = amount - (amount / 10);
         } else 
-        if (sr <= 120) {
-            rez = sum + (3 * sumf / 100);
+        if (data <= 120) {
+            result = amount + (3 * amount / 100);
         } else
-        if (sr <= 240) {
-            rez = sum + (2 * sumf / 25);
+        if (data <= 240) {
+            result = amount + (2 * amount / 25);
         } else
-        if (sr <= 365) {
-            rez = sum + (3 * sumf / 20);
+        if (data <= 365) {
+            result = amount + (3 * amount / 20);
         }
     }
     
-    return rez;
+    return result;
 }

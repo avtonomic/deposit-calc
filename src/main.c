@@ -3,17 +3,19 @@
 
 int main()
 {
-    int sum, sr;
-    float rez = 0;
+    int amount, data, result = 0;
     
-    printf("Input sum: \n");
-    scanf("%d", &sum);
-    printf("Input srok: \n");
-    scanf("%d", &sr);
-    rez = F(sum, sr);
-    if (rez == 0) {
+    printf("Input amount: ");
+    scanf("%d", &amount);
+    printf("Input data: ");
+    scanf("%d", &data);
+    if (validation(amount, data) == 1) {
+        result = income_calc(amount, data);
+    }
+    if (result == 0) {
+        printf("Error: incorrect data\n");
         return 0;
-    } else printf("%.4f\n", rez);
+    } else printf("Income: %.4d\n", result);
     
     return 0;
 }

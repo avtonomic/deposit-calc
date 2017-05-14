@@ -1,1 +1,1 @@
-2
+https://travis-ci.org/avtonomic/deposit-calc.svg?branch=master

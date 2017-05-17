@@ -11,10 +11,10 @@ all: $(EXE) $(EXE_TEST)
 $(EXE): build/src/main.o build/src/deposit.o
 	$(CC) build/src/main.o build/src/deposit.o -o $@
 
-build/src/main.o: src/main.c src/deposit.h
+build/src/main.o: src/main.c
 	$(CC) $(FLAGS) src/main.c -o $@
 
-build/src/deposit.o: src/deposit.c src/deposit.h
+build/src/deposit.o: src/deposit.c
 	$(CC) $(FLAGS) src/deposit.c -o $@
 
 $(EXE_TEST): build/test/deposit_test.o build/test/validation_test.o build/test/main.o build/src/deposit.o
